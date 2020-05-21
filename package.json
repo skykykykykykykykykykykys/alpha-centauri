@@ -1,0 +1,17 @@
+{
+  "name": "eduka",
+  "version": "1.0.0",
+  "description": "simple grader and ranking server ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ismail F. Aziz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "https": "^1.0.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4"
+  }
+}

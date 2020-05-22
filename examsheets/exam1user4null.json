@@ -1,0 +1,91 @@
+{
+    "data": [
+    {
+        "id_exam": 1,
+        "id_user": 4,
+        "answersheets": [
+        {
+            "id_session": 1,
+            "answers": {
+            "1": true,
+            "2": true,
+            "3": true,
+            "4": true,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": true,
+            "9": true,
+            "10": null
+            }
+        },      
+        {
+            "id_session": 2,
+            "answers":{
+                "1": true,
+                "2": null,
+                "3": true,
+                "4": true,
+                "5": true,
+                "6": true,
+                "7": true,
+                "8": null,
+                "9": null,
+                "10": true
+            }
+            },
+            {
+            "id_session": 3,
+            "answers":{
+            }
+            },
+            {
+            "id_session": 4,
+            "answers":{
+                "1": true,
+                "2": true,
+                "3": true,
+                "4": true,
+                "5": true,
+                "6": true,
+                "7": true,
+                "8": true,
+                "9": true,
+                "10": true
+            }
+            },
+            {
+            "id_session": 5,
+            "answers":{
+                "1": true,
+                "2": true,
+                "3": true,
+                "4": true,
+                "5": true,
+                "6": true,
+                "7": true,
+                "8": true,
+                "9": true,
+                "10": true
+            }
+            },
+            {
+            "id_session": 6,
+            "answers":{
+                "1": true,
+                "2": true,
+                "3": true,
+                "4": true,
+                "5": true,
+                "6": true,
+                "7": true,
+                "8": true,
+                "9": true,
+                "10": true
+            }
+            }
+        
+        ]
+    }
+    ]
+}

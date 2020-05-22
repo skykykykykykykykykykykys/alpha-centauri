@@ -1,34 +1,8 @@
 /**
- * Cara maju:
- *      User login
- *      Masukin exam utk sesi 1
- *      Proses nilai sesi 1
- *          masukin score ke SQL
- *      dst.
- *      Proses examsheet:
- *          Totalin nilai
- *          Reference ke user
- *      
- *      Lempar ke ranker
- *      Proses Ranking
- *      masukkin si user +score ke ranking (karena tanpa store si ranking, berarti bakal proses terus)
- * 
- * 
- * rute yg dibikin:
- * 
- *  /grader
- *  POST examsheets:
- *      Nerima examsheets
- *      isinya: id_exam, id_user, id_session (6 sesi), dan 10 jawaban nomor tiap sesi
- *  GET scores?:
- *      ngambil scorenya (keknya per event aja dlu)
- *      minta event id
- *  /ranking
- *  rankingnya per event dlu
- *  karena gk di store, harus fetch terus
- *  GET 1 rank
- *  GET ALL RANK
- * 
+ * TODO:
+ *  All working code that you have to fulfill the requirement (folder name code)
+    Screenshot (everything you need to show to proof that your code is working) (folder name screenshots)
+    How to setup your environment to run all the requirement (you can write anything about your system actually) (file name readme.md)
  * 
  * 
  * 

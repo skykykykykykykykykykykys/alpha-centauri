@@ -7,7 +7,10 @@ module.exports = function(app) {
         .post(todoList.submitExam);
 
     app.route('/ranking/:id_exam')
-        .get(todoList.rankings)
+        .get(todoList.rankings);
     app.route('/ranking/:id_exam/:id_user')
-        .get(todoList.singleRank)
+        .get(todoList.singleRank);
+
+    app.route('/public')
+        .get()
 };

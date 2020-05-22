@@ -1,37 +1,14 @@
 'use strict';
 var connection = require('./conn');
-var response = require('./res');
+var out = require('./res');
 
 var https = require('https');
-
-// GRADER
-/*
-function parseSheets(data) {
-    for (var i = 0; i < data.length; i++) {
-        let userId = data[i].id_user;
-        let examId = data[i].id_exam;
-
-        let sessionScore = 0;
-
-        console.log("User ID : " + userId," Exam ID : " + examId);
-        for (var j = 0; j < data[i].answersheets.length; j++) {
-            let sessionId = data[i].answersheets[j].id_session;
-            for (var k in data[i]. answersheets[j].answers) {
-                let answer = data[i].answersheets[j];
-                //console.log("jawaban " + k + " : " + answer.answers[k]);
-                //scoring
-                if (answer.answers[k] == true) {
-                    sessionScore += 1;
-                }
-            }
-            console.log("Score Session " + sessionId + " : " + sessionScore);
-        }
-    }
-}
-*/
+const fetch = require('node-fetch');
 
 
 exports.submitExam = function(req, res) {
+
+    //examsheets sesuai models.json
 
     let data = (req.body.data);
     //console.log(data[0].id_exam);
@@ -54,6 +31,8 @@ exports.submitExam = function(req, res) {
                 //scoring
                 if (answer.answers[k] == true) {
                     sessionScore[k] += 1;
+                } if (answer.answers[k] == null) {
+                    throw (NULLERROR);
                 }
             }
             totalScore += sessionScore[k];
@@ -83,17 +62,8 @@ exports.submitExam = function(req, res) {
         })
     }
     
+    res.sendFile('blabla.html')
 
-
-    /*
-    var values = [
-        [$id_user, $id_exam, $ses1]
-    ]
-    connection.query(sql, [values], function (err, result) {
-        if (err) throw err;
-        console.log("Number of records inserted: " + result.affectedRows);
-    });
-    */
 };
 
 
@@ -108,60 +78,37 @@ exports.rankings = function(req, res) {
     Outputnya keluar sesuai urutan ranking
     */
 
+    var dataFull = {
+        'status': 200,
+        'rankDetails' : [
+        ]
+    };
+    let parsedData = {};
 
 
-    let sql = 'SELECT * FROM score WHERE id_exam = ' + req.params.id_exam + " ORDER BY total_score ASC";
-    let query = connection.query(sql, (err, results) => {
+    let sql = 'SELECT * FROM score WHERE id_exam = ' + req.params.id_exam + " ORDER BY total_score DESC";
+    let query = connection.query(sql, async (err, results) => {
         if(err) throw err;
-        console.log("Berikut adalah id User pertama : " + results[0].id_user, results[0].id_exam, " Euy ini hasil SQL");
-    });
-
-    for (var i=0; i < results.length; i++) {
-        //nyari per user
-        let url = 'https://dummy.edukasystem.id/user/' + results[i].id_user;
-        console.log("Berikut adalah URL untuk ngefetch userDetails", url);
-        https.get(url, function(response) {
-            console.log(url);
-            console.log(response.statusCode);
-            response.on("data", function(data) {
-                const parseData = JSON.parse(data);
-                console.log('Berikut adalah data lengkap mengenai User dengan id_user: ' + req.params.id, "\n", parseData);
-                console.log(parseData.data.User.id_user);
-            });
-        });
-        var dataFull = {
-            'status': 200,
-            'rankDetails' : [
-                {
-                    'rank' : rank,
-                    'userDetails' : userDetails
-                },
-                {
-                    'rank' : rank,
-                    'userDetails' : userDetails
-                }
-            ]
-        };
-
-    }
-    //TODO: GMN CARANYA append JSON OUTPUT SECARA ITERATIF
-    /*
-    var jsonStr = '{"theTeam":[{"teamId":"1","status":"pending"},{"teamId":"2","status":"member"},{"teamId":"3","status":"member"}]}';
-
-    var obj = JSON.parse(jsonStr);
-    obj['theTeam'].push({"teamId":"4","status":"pending"});
-    jsonStr = JSON.stringify(obj);
-
-
-    TODO:
-        iterasi tiap results
-        cek id_user yg muncul dari results[i],
-        fetch id_user ke dummy.eduka
         
-    */
-    //TODO:
 
 
+        //console.log(results);
+        //console.log("Berikut adalah id User pertama : " + results[0].id_user, results[0].id_exam, " Euy ini hasil SQL");
+
+        //iterasi per user
+        for (let i=0; i < results.length; i++) {
+            let rank = i+1;
+            let userId = results[i].id_user
+            let url = 'https://dummy.edukasystem.id/user/' + userId;
+            let response = await fetch(url)
+                .then(response => response.json())
+            dataFull['rankDetails'].push({"rank" : rank, 'userDetails' : response.data.User});
+            
+        }
+        console.log(dataFull);
+        res.json(dataFull);
+        res.end();
+    });
 };
 
 exports.singleRank = function(req, res) {
@@ -169,31 +116,40 @@ exports.singleRank = function(req, res) {
 
     */
 
+    let rank = 0;
+    let userId = req.params.id_user
     //ini fetch SQL all of user's ranking
-    let sql = 'SELECT * FROM score WHERE id_exam = ' + req.params.id_exam + " ORDER BY total_score ASC";
+    let sql = 'SELECT * FROM score WHERE id_exam = ' + req.params.id_exam + " ORDER BY total_score DESC";
     let query = connection.query(sql, (err, results) => {
         if(err) throw err;
         console.log(results[0].id_user, results[0].id_exam, " Euy ini hasil SQL");
+        printSQL(results);
+        console.log("berikut req.params ", userId );
+        try {
+            rank = indexUserId(results, userId) + 1;
+            console.log("berikut adalah rank userID " + userId + " dengan ranking: #" + rank);
+        } finally {
+            if(err) throw (err);
+        };
+        console.log(results[rank] + "\nDiatas adalah hasil pencarian ranking dari " + userId);
     });
     //nyari ranking id_user
-    let rank = indexUserId(results, req.params.id_user) + 1;
-    console.log(results[indexUserId(results, req.params.id_user)] + "\n Diatas adalah hasil pencarian ranking dari " + req.params.id);
+    
 
     // ini fetch userDetals: userDetails for 1 specified id_user
-    let url = 'https://dummy.edukasystem.id/user/' + req.params.id_user;
+    let parsedData = {};
+    let url = 'https://dummy.edukasystem.id/user/' + userId;
     https.get(url, function(response) {
         console.log(url);
         console.log(response.statusCode);
         response.on("data", function(data) {
-            const parseData = JSON.parse(data);
-            console.log('Berikut adalah data lengkap mengenai User dengan id_user: ' + req.params.id, "\n", parseData);
-            console.log(parseData.data.User.id_user);
+            parsedData = JSON.parse(data);
+            //respond
+            out.sendResponse(parsedData.data.User, rank, res);
         });
     });
-    let detailUser = parseData.data.User;
 
-    //respond
-    sendResponse(detailUser, rank, res);
+    
 
 };
 
@@ -202,5 +158,11 @@ function indexUserId(arr, elementToFind) {
         if (arr[i].id_user == elementToFind) {
             return i;
         }
+    } return null;
+}
+
+function printSQL(arr) {
+    for (var i=0; i<arr.length; i++) {
+        console.log("Berikut adalah row ke " + i + "\nBerikut adalah userID " + arr[i].id_user +"\n");
     } return null;
 }

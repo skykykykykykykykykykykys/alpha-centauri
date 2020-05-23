@@ -1,8 +1,4 @@
 /**
- * TODO:
- *  All working code that you have to fulfill the requirement (folder name code)
-    Screenshot (everything you need to show to proof that your code is working) (folder name screenshots)
-    How to setup your environment to run all the requirement (you can write anything about your system actually) (file name readme.md)
  * 
  * 
  * 

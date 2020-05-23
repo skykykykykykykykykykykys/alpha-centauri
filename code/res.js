@@ -25,27 +25,25 @@
 */
 
 
+exports.sendResponse = function(status, message, submittedData, res) {
+    var data = {
+        'status' : status,
+        'message' : message,
+        'submittedData' : submittedData
+    };
+    res.json(data);
+    res.end();
+};
 
 
-exports.sendResponse = function(userDetails, rank, res) {
+
+exports.singleRankSuccess = function (userDetails, rank, res) {
     var data = {
         'status': 200,
         'rank' : rank,
         'userDetails': userDetails
     };
     res.json(data);
-    console.log("=======sendResponse function work successfully. Here's the output:======\n", data);
+    console.log("GET singleRank success\n", data);
     res.end();
-};
-
-exports.sendResponses = function (userDetails, rank, res) {
-    var data = {
-        'status': 200,
-        'rankDetails' : [
-        ]
-    };
-    data['rankDetails'].push({"rank" : rank, 'userDetails' : userDetails});
-    res.json(data);
-    console.log("=======sendResponses function work successfully. Here's the output:======\n", data);
-    res.end;
 }

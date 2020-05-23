@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "d8ae8fd8-2ede-49a8-8fb5-30016693045a",
+		"name": "eduka-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST exam1user1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": [\r\n    {\r\n        \"id_exam\": 1,\r\n        \"id_user\": 1,\r\n        \"answersheets\": [\r\n        {\r\n            \"id_session\": 1,\r\n            \"answers\": {\r\n            \"1\": true,\r\n            \"2\": true,\r\n            \"3\": false,\r\n            \"4\": true,\r\n            \"5\": false,\r\n            \"6\": true,\r\n            \"7\": false,\r\n            \"8\": false,\r\n            \"9\": false,\r\n            \"10\": true\r\n            }\r\n        },      \r\n        {\r\n            \"id_session\": 2,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": true,\r\n                \"4\": true,\r\n                \"5\": false,\r\n                \"6\": true,\r\n                \"7\": true,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 3,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": false,\r\n                \"3\": false,\r\n                \"4\": true,\r\n                \"5\": true,\r\n                \"6\": true,\r\n                \"7\": true,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 4,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": false,\r\n                \"4\": true,\r\n                \"5\": false,\r\n                \"6\": true,\r\n                \"7\": false,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 5,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": false,\r\n                \"4\": true,\r\n                \"5\": false,\r\n                \"6\": true,\r\n                \"7\": false,\r\n                \"8\": true,\r\n                \"9\": false,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 6,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": true,\r\n                \"4\": true,\r\n                \"5\": false,\r\n                \"6\": true,\r\n                \"7\": false,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            }\r\n        ]\r\n    }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/grader",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"grader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST exam1user2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": [\r\n    {\r\n        \"id_exam\": 1,\r\n        \"id_user\": 2,\r\n        \"answersheets\": [\r\n        {\r\n            \"id_session\": 1,\r\n            \"answers\": {\r\n            \"1\": false,\r\n            \"2\": true,\r\n            \"3\": false,\r\n            \"4\": false,\r\n            \"5\": false,\r\n            \"6\": false,\r\n            \"7\": false,\r\n            \"8\": false,\r\n            \"9\": false,\r\n            \"10\": false\r\n            }\r\n        },      \r\n        {\r\n            \"id_session\": 2,\r\n            \"answers\":{\r\n                \"1\": false,\r\n                \"2\": false,\r\n                \"3\": false,\r\n                \"4\": false,\r\n                \"5\": false,\r\n                \"6\": false,\r\n                \"7\": false,\r\n                \"8\": false,\r\n                \"9\": false,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 3,\r\n            \"answers\":{\r\n                \"1\": false,\r\n                \"2\": false,\r\n                \"3\": false,\r\n                \"4\": true,\r\n                \"5\": false,\r\n                \"6\": true,\r\n                \"7\": false,\r\n                \"8\": false,\r\n                \"9\": false,\r\n                \"10\": false\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 4,\r\n            \"answers\":{\r\n                \"1\": false,\r\n                \"2\": false,\r\n                \"3\": false,\r\n                \"4\": false,\r\n                \"5\": false,\r\n                \"6\": false,\r\n                \"7\": false,\r\n                \"8\": false,\r\n                \"9\": false,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 5,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": false,\r\n                \"3\": false,\r\n                \"4\": false,\r\n                \"5\": false,\r\n                \"6\": false,\r\n                \"7\": false,\r\n                \"8\": false,\r\n                \"9\": false,\r\n                \"10\": false\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 6,\r\n            \"answers\":{\r\n                \"1\": false,\r\n                \"2\": false,\r\n                \"3\": false,\r\n                \"4\": false,\r\n                \"5\": false,\r\n                \"6\": false,\r\n                \"7\": false,\r\n                \"8\": false,\r\n                \"9\": false,\r\n                \"10\": true\r\n            }\r\n            }\r\n        ]\r\n    }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/grader",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"grader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST exam1user3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": [\r\n    {\r\n        \"id_exam\": 1,\r\n        \"id_user\": 3,\r\n        \"answersheets\": [\r\n        {\r\n            \"id_session\": 1,\r\n            \"answers\": {\r\n            \"1\": true,\r\n            \"2\": true,\r\n            \"3\": true,\r\n            \"4\": true,\r\n            \"5\": true,\r\n            \"6\": true,\r\n            \"7\": true,\r\n            \"8\": true,\r\n            \"9\": true,\r\n            \"10\": true\r\n            }\r\n        },      \r\n        {\r\n            \"id_session\": 2,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": true,\r\n                \"4\": true,\r\n                \"5\": true,\r\n                \"6\": true,\r\n                \"7\": true,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 3,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": true,\r\n                \"4\": true,\r\n                \"5\": true,\r\n                \"6\": true,\r\n                \"7\": true,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 4,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": true,\r\n                \"4\": true,\r\n                \"5\": true,\r\n                \"6\": true,\r\n                \"7\": true,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 5,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": true,\r\n                \"4\": true,\r\n                \"5\": true,\r\n                \"6\": true,\r\n                \"7\": true,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 6,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": true,\r\n                \"4\": true,\r\n                \"5\": true,\r\n                \"6\": true,\r\n                \"7\": true,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            }\r\n        ]\r\n    }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/grader",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"grader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST exam2user1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": [\r\n    {\r\n        \"id_exam\": 2,\r\n        \"id_user\": 1,\r\n        \"answersheets\": [\r\n        {\r\n            \"id_session\": 1,\r\n            \"answers\": {\r\n            \"1\": false,\r\n            \"2\": true,\r\n            \"3\": false,\r\n            \"4\": false,\r\n            \"5\": false,\r\n            \"6\": false,\r\n            \"7\": false,\r\n            \"8\": false,\r\n            \"9\": false,\r\n            \"10\": false\r\n            }\r\n        },      \r\n        {\r\n            \"id_session\": 2,\r\n            \"answers\":{\r\n                \"1\": false,\r\n                \"2\": false,\r\n                \"3\": false,\r\n                \"4\": false,\r\n                \"5\": false,\r\n                \"6\": false,\r\n                \"7\": false,\r\n                \"8\": false,\r\n                \"9\": false,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 3,\r\n            \"answers\":{\r\n                \"1\": false,\r\n                \"2\": false,\r\n                \"3\": false,\r\n                \"4\": true,\r\n                \"5\": false,\r\n                \"6\": true,\r\n                \"7\": false,\r\n                \"8\": false,\r\n                \"9\": false,\r\n                \"10\": false\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 4,\r\n            \"answers\":{\r\n                \"1\": false,\r\n                \"2\": false,\r\n                \"3\": false,\r\n                \"4\": false,\r\n                \"5\": false,\r\n                \"6\": false,\r\n                \"7\": false,\r\n                \"8\": false,\r\n                \"9\": false,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 5,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": false,\r\n                \"3\": false,\r\n                \"4\": false,\r\n                \"5\": false,\r\n                \"6\": false,\r\n                \"7\": false,\r\n                \"8\": false,\r\n                \"9\": false,\r\n                \"10\": false\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 6,\r\n            \"answers\":{\r\n                \"1\": false,\r\n                \"2\": false,\r\n                \"3\": false,\r\n                \"4\": false,\r\n                \"5\": false,\r\n                \"6\": false,\r\n                \"7\": false,\r\n                \"8\": false,\r\n                \"9\": false,\r\n                \"10\": true\r\n            }\r\n            }\r\n        ]\r\n    }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/grader",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"grader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST exam1user4 null",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": [\r\n    {\r\n        \"id_exam\": 1,\r\n        \"id_user\": 4,\r\n        \"answersheets\": [\r\n        {\r\n            \"id_session\": 1,\r\n            \"answers\": {\r\n            \"1\": true,\r\n            \"2\": true,\r\n            \"3\": true,\r\n            \"4\": true,\r\n            \"5\": true,\r\n            \"6\": true,\r\n            \"7\": true,\r\n            \"8\": true,\r\n            \"9\": true,\r\n            \"10\": null\r\n            }\r\n        },      \r\n        {\r\n            \"id_session\": 2,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": null,\r\n                \"3\": true,\r\n                \"4\": true,\r\n                \"5\": true,\r\n                \"6\": true,\r\n                \"7\": true,\r\n                \"8\": null,\r\n                \"9\": null,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 3,\r\n            \"answers\":{\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 4,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": true,\r\n                \"4\": true,\r\n                \"5\": true,\r\n                \"6\": true,\r\n                \"7\": true,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 5,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": true,\r\n                \"4\": true,\r\n                \"5\": true,\r\n                \"6\": true,\r\n                \"7\": true,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            },\r\n            {\r\n            \"id_session\": 6,\r\n            \"answers\":{\r\n                \"1\": true,\r\n                \"2\": true,\r\n                \"3\": true,\r\n                \"4\": true,\r\n                \"5\": true,\r\n                \"6\": true,\r\n                \"7\": true,\r\n                \"8\": true,\r\n                \"9\": true,\r\n                \"10\": true\r\n            }\r\n            }\r\n        \r\n        ]\r\n    }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/grader",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"grader"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET singleRank exam1user3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/ranking/1/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ranking",
+						"1",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET singleRank exam2user1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/ranking/2/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ranking",
+						"2",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET singleRank exam1user1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/ranking/1/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ranking",
+						"1",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

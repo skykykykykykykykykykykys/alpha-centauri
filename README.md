@@ -6,3 +6,17 @@ You have to create an API to fetch the score from your local MySQL and return it
 Ranker Service
 You have to create an API that will fetch all Ranking. You will fetch all scores from your Grader service and rank them without store it and then show it in JSON format complete with the user’s details which you can have from the User Service that we have already provided.
 You have to create an API that will fetch a specified user’s Ranking. You will fetch all scores and rank them all and then give back that specified user Rank complete with the user’s details.
+
+## init:
+npm install -g
+
+## how to start:
+nodemon
+
+
+
+
+## TODO:
+testing null values buat grader
+testing tanpa path parameter
+testing path parameternya salah
